@@ -158,7 +158,6 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
       <div class="facts" id="pFacts"></div>
       <div><button class="btn-line" type="button" id="notMe">זה לא אני</button></div>
     </div>
-    <div class="remind" id="pRemind"></div>
   </section>
 
   <section class="card">
@@ -170,13 +169,6 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
       <tr><td class="t">10:00</td><td><b>ארוחת בוקר בשטח</b><small>פתיחה משותפת ונטוורקינג</small></td></tr>
       <tr><td class="t"></td><td><b>סיורי ליקוט פטריות מודרכים</b><small>יציאה בשלוש קבוצות לסיורים מודרכים ביער אודם, רמת הגולן</small></td></tr>
     </table>
-  </section>
-
-  <section class="card" id="lineupCard" hidden>
-    <h2 id="lineupTitle"></h2>
-    <p class="muted" id="lineupMeta" style="margin-top:-6px"></p>
-    <ul class="lineup" id="lineup"></ul>
-    <p class="muted" style="font-size:14px;margin:10px 0 0">סדר ההרצאות בתוך המושב עדיין עשוי להשתנות.</p>
   </section>
 
   <section class="card" id="formCard" hidden>
@@ -205,39 +197,24 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
         <div class="authors" id="authors"></div>
         <button class="btn-line" type="button" id="addAuthor" style="margin-top:8px">+ הוספת שותף</button>
       </div>
-      <label data-for="talk"><span class="req">תקציר</span><span class="hint">עד 300 מילים, בעברית או באנגלית</span>
-        <textarea name="abstract" data-maxwords="300" style="min-height:220px" data-req-for="talk"></textarea></label>
-      <div class="counter" id="counter" data-for="talk"></div>
       <div data-for="talk">
         <label class="drop" id="dropResearch"><img alt="" hidden><span><b>תמונה שקשורה למחקר</b> <span class="hint">(לא חובה, אבל מגניב!)</span><br><span class="hint">JPG או PNG. תופיע בתוכנייה ובאתר.</span></span><input type="file" accept="image/*" data-file="research_image"></label>
       </div>
       <label data-for="talk">קרדיט / כיתוב לתמונה<input name="research_image_credit" placeholder="צילום: …"></label>
 
-      <!-- bio: talk + chair -->
+      <!-- professional background: talk + chair -->
       <p class="sec" data-for="talk chair">עליך</p>
-      <label data-for="talk chair"><span class="req">ביו קצר</span><span class="hint">2–3 משפטים, עד 60 מילים. יו״ר המושב יקריא אותו כשיציג אותך.</span>
+      <label data-for="talk chair"><span class="req">רקע מקצועי</span><span class="hint">2–3 משפטים, עד 60 מילים. יו״ר המושב יקריא אותו כשיציג אותך.</span>
         <textarea name="bio" data-maxwords="60" style="min-height:90px" data-req-for="talk chair"></textarea></label>
       <div class="counter" id="bioCounter" data-for="talk chair"></div>
       <div data-for="talk chair">
         <label class="drop"><img alt="" hidden><span><b>תמונת פנים</b><br><span class="hint">תמונה ברורה, רצוי ברקע נקי</span></span><input type="file" accept="image/*" data-file="headshot"></label>
       </div>
 
-      <!-- attendance: talk + chair -->
-      <p class="sec" data-for="talk chair">הגעה</p>
-      <label class="check" data-for="talk chair"><input type="checkbox" name="confirm_day1" data-req-for="talk chair"><span>אני מאשר/ת הגעה ליום הכנס, 27.1.2027</span></label>
-      <div data-for="talk chair">
-        <p style="margin:0 0 6px;font-weight:500;font-size:15px">מצטרף/ת לסיור הליקוט ביום השני (28.1)?</p>
-        <div class="radios">
-          <label><input type="radio" name="day2" value="yes">כן</label>
-          <label><input type="radio" name="day2" value="no">לא</label>
-          <label><input type="radio" name="day2" value="maybe">עוד לא יודע/ת</label>
-        </div>
-      </div>
-      <label data-for="talk chair">מגבלות תזונה לארוחת הצהריים<input name="dietary" placeholder="צמחוני, טבעוני, ללא גלוטן…"></label>
       <label data-for="talk">צרכים טכניים להרצאה<input name="tech_needs" placeholder="סרטון עם קול, מחשב משלי, הרצאה מרחוק…"></label>
 
       <!-- consent -->
-      <label class="check" data-for="talk chair"><input type="checkbox" name="consent_publish" data-req-for="talk chair"><span>אני מסכים/ה לפרסום השם, הביו, התמונות והתקציר בתוכנייה, באתר ובחומרי הכנס, ושיש לי זכות להשתמש בתמונות ששלחתי</span></label>
+      <label class="check" data-for="talk chair"><input type="checkbox" name="consent_publish" data-req-for="talk chair"><span>אני מסכים/ה לפרסום השם, הרקע המקצועי והתמונות בתוכנייה, באתר ובחומרי הכנס, ושיש לי זכות להשתמש בתמונות ששלחתי</span></label>
       <label class="check" data-for="talk"><input type="checkbox" name="consent_recording"><span>אני מסכים/ה לצילום ההרצאה ולפרסום ההקלטה אחרי הכנס</span></label>
 
       <label>הערות<textarea name="notes" style="min-height:70px"></textarea></label>
@@ -390,25 +367,14 @@ function choose(p){
     .concat(p.roles.map(r => `<span class="fact">${roleLabel(r)}</span>`));
   document.getElementById("pFacts").innerHTML = facts.join("");
 
-  const r = p.roles.map(x => x.kind);
-  let remind = "";
-  if (r.includes("talk20")) remind = "<b>ההרצאה שלך היא 20 דקות כולל שאלות.</b><br>מומלץ לבנות אותה ל-17 דקות הרצאה ו-3 דקות לשאלות.";
-  else if (r.includes("talk")) remind = "<b>ההרצאה שלך היא 15 דקות כולל שאלות.</b><br>מומלץ לבנות אותה ל-12.5 דקות הרצאה ו-2.5 דקות לשאלות. היו״ר יקפיד על הזמנים.";
-  else if (r.includes("panelLead")) remind = "<b>הפאנל שלך הוא 20 דקות.</b><br>כאן צריך רק את השם המלא והשיוך המקצועי שלך. את פרטי משתתפי הפאנל נתאם איתך בנפרד.";
-  else if (r.includes("panel")) remind = "<b>תודה שהצטרפת לפאנל!</b><br>כל מה שצריך ממך כאן הוא השם המלא והשיוך המקצועי, כפי שיופיעו בתוכנייה.";
   const it = main.it;
-  if (it && it.with) remind += `<br><br>ההרצאה משותפת עם ${it.with}. מספיק שאחד/ת מכם ימלא את פרטי ההרצאה.`;
-  if (it && it.tentative) remind += "<br><br><span class='hint'>השיבוץ שלך עדיין בתיאום ועשוי להשתנות.</span>";
-  document.getElementById("pRemind").innerHTML = remind;
-
   drawSchedule(p);
-  drawLineup(s, p);
   setupForm(p, kind, it);
   document.getElementById("personal").scrollIntoView({ behavior:"smooth" });
 }
 document.getElementById("notMe").addEventListener("click", () => {
   ME = null; who.value = ""; document.getElementById("personal").hidden = true;
-  document.getElementById("formCard").hidden = true; document.getElementById("lineupCard").hidden = true;
+  document.getElementById("formCard").hidden = true;
   try { localStorage.removeItem("fgf-speaker"); } catch(e) {}
   drawSchedule(null); window.scrollTo({ top:0, behavior:"smooth" }); who.focus();
 });
@@ -457,9 +423,8 @@ function counter(ta, el){
   const n = words(ta.value), max = +ta.dataset.maxwords;
   el.textContent = `${n} / ${max} מילים`; el.classList.toggle("over", n > max);
 }
-f.abstract.addEventListener("input", () => counter(f.abstract, document.getElementById("counter")));
 f.bio.addEventListener("input", () => counter(f.bio, document.getElementById("bioCounter")));
-counter(f.abstract, document.getElementById("counter")); counter(f.bio, document.getElementById("bioCounter"));
+counter(f.bio, document.getElementById("bioCounter"));
 
 /* images are shrunk in the browser before sending, so uploads stay small */
 function shrink(file, maxSide){
@@ -486,8 +451,7 @@ f.addEventListener("submit", async ev => {
   const st = document.getElementById("status"); st.className = "status";
   const fail = m => { st.textContent = m; st.classList.add("err"); };
   if (!f.checkValidity()) { f.reportValidity(); return fail("נא למלא את כל שדות החובה."); }
-  if (f.dataset.kind === "talk" && words(f.abstract.value) > 300) return fail("התקציר ארוך מ-300 מילים.");
-  if (f.dataset.kind !== "panel" && words(f.bio.value) > 60) return fail("הביו ארוך מ-60 מילים.");
+  if (f.dataset.kind !== "panel" && words(f.bio.value) > 60) return fail("הרקע המקצועי ארוך מ-60 מילים.");
   if (f.website.value) return;
 
   const kind = f.dataset.kind;
