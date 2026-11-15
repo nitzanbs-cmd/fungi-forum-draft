@@ -120,6 +120,9 @@ textarea{min-height:110px;resize:vertical}
 .status.err{display:block;background:#f8e1dc;color:#8a2a1a}
 .hp{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;clip-path:inset(50%)}
 .tbd{display:inline-block;border:1.5px dashed var(--gold);border-radius:10px;padding:0 8px;font-size:14px;color:var(--gold-dark)}
+.partners-t{font:600 12px "Montserrat","Heebo",sans-serif;letter-spacing:2px;color:var(--gold);margin:0 0 12px}
+.partners{display:flex;flex-wrap:wrap;gap:22px 30px;align-items:center;justify-content:center;margin-bottom:18px}
+.partners img{height:46px;width:auto}
 footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid #eadfcd}
 [hidden]{display:none !important}
 </style>
@@ -223,7 +226,17 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
   </section>
 </main>
 
-<footer>Golan-Galilee Fungi Forum · 27–28.1.2027 · קצרין, רמת הגולן</footer>
+<footer>
+  <p class="partners-t">בשיתוף ובתמיכת</p>
+  <div class="partners">
+    <img src="img/logo_migal.png" alt="מיגל – מכון למחקר מדעי בגליל">
+    <img src="img/logo_kkl.png" alt="קק״ל">
+    <img src="img/logo_mop_zafon.png" alt="מו״פ צפון">
+    <img src="img/logo_golan.png" alt="מועצה אזורית גולן">
+    <img src="img/logo_katzrin.png" alt="קצרין">
+  </div>
+  Golan-Galilee Fungi Forum · 27–28.1.2027 · קצרין, רמת הגולן
+</footer>
 
 <script src="config.js"></script>
 <script>
