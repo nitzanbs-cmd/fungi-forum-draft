@@ -75,12 +75,14 @@ h3{color:var(--olive-dark);font-size:19px;margin:0 0 8px}
 .sched td.mine{background:var(--olive);color:#fff;border-radius:10px;box-shadow:0 0 0 3px #fff inset}
 .sched td.mine small{color:#e8eedd}
 .sched small{display:block;color:var(--muted);font-size:13px}
+.sched tr.par td:nth-child(3){border-inline-start:2px solid var(--line)}
 @media (max-width:640px){
   .sched thead{display:none}
   .sched,.sched tbody,.sched tr,.sched td{display:block;width:100%}
   .sched tr{border-bottom:1px solid #eee3d2;padding:4px 0}
   .sched td{border:none;padding:4px 8px}
   .sched td.t{text-align:right;width:auto}
+  .sched tr.par td:nth-child(3){border-inline-start:none;border-top:1px dashed var(--line);margin-top:4px;padding-top:8px}
 }
 .lineup{list-style:none;padding:0;margin:10px 0 0}
 .lineup li{display:flex;gap:12px;padding:9px 12px;border-radius:12px}
@@ -332,7 +334,7 @@ function cell(id, me){
 }
 function drawSchedule(me){
   const rows = ROWS.map(r => r.par
-    ? `<tr><td class="t">${r.t}</td>${cell(r.par[0], me)}${cell(r.par[1], me)}</tr>`
+    ? `<tr class="par"><td class="t">${r.t}</td>${cell(r.par[0], me)}${cell(r.par[1], me)}</tr>`
     : `<tr class="${r.brk ? "brk" : ""}"><td class="t">${r.t}</td><td colspan="2"><b>${r.text}</b>${r.sub ? `<small>${r.sub}</small>` : ""}</td></tr>`).join("");
   document.getElementById("sched").innerHTML = `<thead><tr><th>שעה</th><th>${AUD}</th><th>${SHAMIR}</th></tr></thead><tbody>${rows}</tbody>`;
   document.getElementById("schedHint").textContent = me ? "· המושב שלך מודגש בירוק" : "";
