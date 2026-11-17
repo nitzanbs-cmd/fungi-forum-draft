@@ -65,6 +65,7 @@ h3{color:var(--olive-dark);font-size:19px;margin:0 0 8px}
 .sched tr.mine td{background:var(--olive);color:#fff}
 .sched tr.mine td.t{color:#fff}
 .sched small{display:block;color:var(--muted);font-size:13px}
+.sched tr.par td:nth-child(3){border-inline-start:2px solid var(--line)}
 .sched tr.mine small{color:#e8eedd}
 @media (max-width:640px){
   .sched thead{display:none}
@@ -72,6 +73,7 @@ h3{color:var(--olive-dark);font-size:19px;margin:0 0 8px}
   .sched tr{border-bottom:1px solid #eee3d2;padding:4px 0}
   .sched td{border:none;padding:4px 8px}
   .sched td.t{text-align:right;width:auto}
+  .sched tr.par td:nth-child(3){border-inline-start:none;border-top:1px dashed var(--line);margin-top:4px;padding-top:8px}
 }
 
 /* guidelines */
@@ -370,7 +372,7 @@ const ROWS = [
 document.getElementById("sched").innerHTML =
   `<thead><tr><th>שעה</th><th>${AUD}</th><th>${SHAMIR}</th></tr></thead><tbody>` +
   ROWS.map(([t, what, sub, cls]) => Array.isArray(what)
-    ? `<tr><td class="t">${t}</td><td><b>מושב: ${what[0]}</b><small>${AUD}</small></td><td><b>מושב: ${what[1]}</b><small>${SHAMIR}</small></td></tr>`
+    ? `<tr class="par"><td class="t">${t}</td><td><b>מושב: ${what[0]}</b><small>${AUD}</small></td><td><b>מושב: ${what[1]}</b><small>${SHAMIR}</small></td></tr>`
     : `<tr class="${cls || ""}"><td class="t">${t}</td><td colspan="2"><b>${what}</b>${sub ? `<small>${sub}</small>` : ""}</td></tr>`).join("") + "</tbody>";
 
 /* co-authors */
