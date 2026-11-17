@@ -151,11 +151,6 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
     <p class="nomatch" id="nomatch" hidden>לא מצאנו את השם. נסו לכתוב רק שם פרטי או שם משפחה, או <a href="index.html#form-contact">כתבו לנו</a>.</p>
     </div>
   </header>
-  <div class="days" id="daysBox" hidden>
-    <p><b>יום 1:</b> יום מדעי ומקצועי</p>
-    <p><b>יום 2:</b> סיורי ליקוט פטריות מודרכים ושיתופי פעולה</p>
-    <p class="loc"><svg width="22" height="30" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0z" fill="#b98a4c"/><circle cx="12" cy="11.5" r="4.6" fill="#fff"/></svg>קצרין, רמת הגולן</p>
-  </div>
 
   <section id="personal" hidden>
     <div class="card me">
@@ -164,17 +159,6 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
       <div class="facts" id="pFacts"></div>
       <div><button class="btn-line" type="button" id="notMe">זה לא אני</button></div>
     </div>
-  </section>
-
-  <section class="card" id="schedCard" hidden>
-    <h2>לוח הזמנים – יום רביעי, 27 בינואר 2027</h2>
-    <p class="muted" style="margin-top:-6px">יום מדעי ומקצועי · קצרין <span id="schedHint"></span></p>
-    <table class="sched" id="sched"></table>
-    <h3 style="margin-top:24px">יום חמישי, 28 בינואר 2027 – שיתופי פעולה ושטח</h3>
-    <table class="sched">
-      <tr><td class="t">10:00</td><td><b>ארוחת בוקר בשטח</b><small>פתיחה משותפת ונטוורקינג</small></td></tr>
-      <tr><td class="t"></td><td><b>סיורי ליקוט פטריות מודרכים</b><small>יציאה בשלוש קבוצות לסיורים מודרכים ביער אודם, רמת הגולן</small></td></tr>
-    </table>
   </section>
 
   <section class="card" id="formCard" hidden>
@@ -227,6 +211,23 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
       <div class="status" id="status" role="status"></div>
     </form>
   </section>
+
+  <section class="card" id="schedCard" hidden>
+    <h2>לוח הזמנים – יום רביעי, 27 בינואר 2027</h2>
+    <p class="muted" style="margin-top:-6px">יום מדעי ומקצועי · קצרין <span id="schedHint"></span></p>
+    <table class="sched" id="sched"></table>
+    <h3 style="margin-top:24px">יום חמישי, 28 בינואר 2027 – שיתופי פעולה ושטח</h3>
+    <table class="sched">
+      <tr><td class="t">10:00</td><td><b>ארוחת בוקר בשטח</b><small>פתיחה משותפת ונטוורקינג</small></td></tr>
+      <tr><td class="t"></td><td><b>סיורי ליקוט פטריות מודרכים</b><small>יציאה בשלוש קבוצות לסיורים מודרכים ביער אודם, רמת הגולן</small></td></tr>
+    </table>
+  </section>
+
+  <div class="days" id="daysBox" hidden style="border-top:2px solid var(--line);border-radius:28px;margin-top:22px">
+    <p><b>יום 1:</b> יום מדעי ומקצועי</p>
+    <p><b>יום 2:</b> סיורי ליקוט פטריות מודרכים ושיתופי פעולה</p>
+    <p class="loc"><svg width="22" height="30" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0z" fill="#b98a4c"/><circle cx="12" cy="11.5" r="4.6" fill="#fff"/></svg>קצרין, רמת הגולן</p>
+  </div>
 </main>
 
 <footer>
