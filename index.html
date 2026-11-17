@@ -49,7 +49,8 @@ a{color:var(--gold-dark)}
 /* logos */
 .logos{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0 6px;flex-wrap:wrap}
 .logos img{height:72px;width:auto;object-fit:contain}
-@media (max-width:640px){.logos{justify-content:center}.logos img{height:48px}}
+.logos img[src*="pitriot"]{height:50px}
+@media (max-width:640px){.logos{justify-content:center}.logos img{height:48px}.logos img[src*="pitriot"]{height:33px}}
 
 /* hero */
 .std{font-family:"Archivo Black",sans-serif;font-size:clamp(46px,11.5vw,132px);line-height:.95;text-align:center;margin:18px 0 10px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1px;direction:ltr}
