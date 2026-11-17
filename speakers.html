@@ -203,10 +203,6 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
         <div class="authors" id="authors"></div>
         <button class="btn-line" type="button" id="addAuthor" style="margin-top:8px">+ הוספת שותף</button>
       </div>
-      <div data-for="talk">
-        <label class="drop" id="dropResearch"><img alt="" hidden><span><b>תמונה שקשורה למחקר</b> <span class="hint">(לא חובה, אבל מגניב!)</span><br><span class="hint">JPG או PNG. תופיע בתוכנייה ובאתר.</span></span><input type="file" accept="image/*" data-file="research_image"></label>
-      </div>
-      <label data-for="talk">קרדיט / כיתוב לתמונה<input name="research_image_credit" placeholder="צילום: …"></label>
 
       <!-- professional background: talk + chair -->
       <p class="sec" data-for="talk chair">עליך</p>
@@ -218,6 +214,10 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
       </div>
 
       <label data-for="talk">צרכים טכניים להרצאה<input name="tech_needs" placeholder="סרטון עם קול, מחשב משלי, הרצאה מרחוק…"></label>
+      <div data-for="talk">
+        <label class="drop" id="dropResearch"><img alt="" hidden><span><b>תמונה שקשורה למחקר</b> <span class="hint">(לא חובה, אבל מגניב!)</span><br><span class="hint">JPG או PNG. תופיע בתוכנייה ובאתר.</span></span><input type="file" accept="image/*" data-file="research_image"></label>
+      </div>
+      <label data-for="talk">קרדיט / כיתוב לתמונה<input name="research_image_credit" placeholder="צילום: …"></label>
 
       <!-- consent -->
       <label class="check" data-for="talk chair"><input type="checkbox" name="consent_publish" data-req-for="talk chair"><span>אני מסכים/ה לפרסום השם, הרקע המקצועי והתמונות בתוכנייה, באתר ובחומרי הכנס, ושיש לי זכות להשתמש בתמונות ששלחתי</span></label>
