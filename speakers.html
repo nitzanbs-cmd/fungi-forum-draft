@@ -166,7 +166,7 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
     </div>
   </section>
 
-  <section class="card">
+  <section class="card" id="schedCard" hidden>
     <h2>לוח הזמנים – יום רביעי, 27 בינואר 2027</h2>
     <p class="muted" style="margin-top:-6px">יום מדעי ומקצועי · קצרין <span id="schedHint"></span></p>
     <table class="sched" id="sched"></table>
@@ -383,13 +383,14 @@ function choose(p){
   document.getElementById("pFacts").innerHTML = facts.join("");
 
   const it = main.it;
+  document.getElementById("schedCard").hidden = false;
   drawSchedule(p);
   setupForm(p, kind, it);
   document.getElementById("personal").scrollIntoView({ behavior:"smooth" });
 }
 document.getElementById("notMe").addEventListener("click", () => {
   ME = null; who.value = ""; document.getElementById("personal").hidden = true;
-  document.getElementById("formCard").hidden = true;
+  document.getElementById("formCard").hidden = true; document.getElementById("schedCard").hidden = true;
   try { localStorage.removeItem("fgf-speaker"); } catch(e) {}
   drawSchedule(null); window.scrollTo({ top:0, behavior:"smooth" }); who.focus();
 });
