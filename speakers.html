@@ -248,34 +248,34 @@ const FORM_ENDPOINT = window.FORM_ENDPOINT || "";
 const AUD = "אודיטוריום תל-חי", SHAMIR = "אולם כנסים, מכון שמיר";
 
 /* ===== Program data (edit here) =====
-   type: talk = 15 min, talk20 = 20 min, panel = panel member, panelLead = leads a panel (20 min)
+   type: talk = 15 min, talk20 = 20 min, talk30 = 30 min, panel = panel member, panelLead = leads a panel (20 min)
    tentative: true marks names that still have a "?" in the planning table */
 const SESSIONS = [
   { id:"food", name:"גידול וביומסה", slot:"11:15–12:35", room:AUD, chairs:["דן לבנון","סגולה מוצפי"], items:[
-    { n:"סגולה מוצפי", inst:"תל-חי", type:"talk" },
-    { n:"עופר דנאי", type:"talk" },
+    { n:"סגולה מוצפי", inst:"אוניברסיטת קרית שמונה–תל חי ומיגל", type:"talk" },
+    { n:"עופר דנאי", inst:"חוות השמפיניון, זרעית", type:"talk", topic:"גידול פטריות מאכל בישראל: עבר, הווה ועתיד" },
     { n:"ירון שיטרית", inst:"אוניברסיטת בן-גוריון", type:"talk", topic:"שיתוף פעולה בין חיידקי קרקע לפטריית אקטומיקוריזה כמהת המדבר חיוני להספקת זרחן אורגני לצמח" },
-    { n:"ברק דרור", type:"talk" },
-    { n:"בן שחר", type:"panelLead", topic:"פאנל מזון ופטריות – פודטק, בהשתתפות רשות החדשנות, תעשייה ושותפים" } ]},
+    { n:"ברק דרור", type:"talk", topic:"גידול תפטיר לפיתוח חלבון אלטרנטיבי: פערי ידע ויצירת סטנדרט לקידום התחום" },
+    { n:"בן שחר", type:"panelLead", topic:"פאנל מזון ופטריות – פודטק, בהשתתפות נציגי רשות החדשנות וחברות" } ]},
   { id:"citizen", name:"מדע אזרחי", slot:"11:15–12:35", room:SHAMIR, chairs:["יסמין רייזר","איילת שביט"], items:[
     { n:"יסמין רייזר", inst:"מכון שמיר", type:"talk", topic:"סימולציות והכשרות במחקרי מדע אזרחי בפטריות", with:"מרצי אדרי" },
     { n:"מרצי אדרי", inst:"מכון שמיר", type:"talk", topic:"סימולציות והכשרות במחקרי מדע אזרחי בפטריות", with:"יסמין רייזר", hideInLineup:true },
     { n:"ריקי ענתבי", inst:"האוניברסיטה העברית בירושלים", type:"talk", topic:"כריזמה לא אנושית וכיצד היא משפיעה על מדענים ועל מדיניות בנושא מגוון ביולוגי" },
     { n:"טלי קוסובסקי", title:"ד״ר", inst:"עמותת פטריות הבר", type:"talk", topic:"העמותה ואיך הקהילה עזרה לפרויקט הגנטי לקרות" },
     { n:"ששון זערור", inst:"אקדמיה בכיכר (תל-חי)", type:"talk", topic:"מיקולוגיה בכיכר / נחל הזהב" },
-    { n:"אלינוער שביט", type:"talk20", topic:"NAMA", tentative:true } ]},
-  { id:"health", name:"פטריות בבריאות ובחולי האדם", slot:"13:20–14:55", room:AUD, chairs:["עופרי לוי","סולימן חטיב"], items:[
-    { n:"עופרי לוי", inst:"תל-חי", type:"talk", topic:"פתוגנים אנושיים וצמחים: פענוח התגובה של פטריות פתוגניות לחומרי הגנה טבעיים" },
-    { n:"פייגה מגזל", inst:"תל-חי", type:"talk", topic:"השפעת תסיסה של פטריות ריישי וקורדיספס על מיקרוביום האדם" },
-    { n:"סולימן חטיב", inst:"תל-חי", type:"talk" },
-    { n:"גאמאל מחגנה", inst:"תל-חי", type:"talk", topic:"פטריות רפואיות לטיפול בסרטן" },
+    { n:"אלינוער שביט", type:"talk30", topic:"NAMA" } ]},
+  { id:"health", name:"פטריות בחולי ובריאות האדם", slot:"13:20–14:55", room:AUD, chairs:["עופרי לוי","סולימן חטיב"], items:[
+    { n:"עופרי לוי", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"פתוגנים אנושיים וצמחים: פענוח התגובה של פטריות פתוגניות לחומרי הגנה טבעיים" },
+    { n:"פייגה מגזל", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"השפעת תסיסה של פטריות ריישי וקורדיספס על מיקרוביום האדם" },
+    { n:"סולימן חטיב", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk" },
+    { n:"גאמאל מחגנה", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"פטריות רפואיות לטיפול בסרטן" },
     { n:"דליה לוינסון", inst:"מכון שמיר", type:"talk", topic:"הרעלות מפטריות בישראל" },
-    { n:"ניר אושרוב", type:"talk20", topic:"הרצאה מיוחדת של מומחה אורח" } ]},
+    { n:"ניר אושרוב", inst:"אוניברסיטת תל אביב", type:"talk20", topic:"The surprising way in which Aspergillus fumigatus developed triazole antifungal resistance" } ]},
   { id:"ecology", name:"אקולוגיה", slot:"13:20–14:55", room:SHAMIR, chairs:["ניצן בר שמואל","עידן פרמן"], items:[
-    { n:"עידן פרמן", inst:"תל-חי", type:"talk", topic:"שימוש בפסולת חקלאית ויער לשימוש דו-תכליתי: גידול פטריות מאכל וייצור מזון לבעלי חיים" },
-    { n:"איתי אופטובסקי", inst:"תל-חי", type:"talk", topic:"השפעת פטריות צוף על מאביקים" },
+    { n:"עידן פרמן", inst:"אוניברסיטת קרית שמונה–תל חי ומיגל", type:"talk", topic:"שימוש בפסולת חקלאית ויער לשימוש דו-תכליתי: גידול פטריות מאכל וייצור מזון לבעלי חיים" },
+    { n:"איתי אופטובסקי", inst:"אוניברסיטת קרית שמונה–תל חי ומיגל", type:"talk", topic:"השפעת פטריות צוף על מאביקים" },
     { n:"אלעד גילאון", inst:"הפקולטה לחקלאות", type:"talk", topic:"טקסונומיה של פטריות בישראל" },
-    { n:"ליאורה שאלתיאל הרפז", inst:"תל-חי", type:"talk", topic:"זח״ש והמיקוביום בתוכו ובסביבתו" },
+    { n:"ליאורה שאלתיאל הרפז", inst:"אוניברסיטת קרית שמונה–תל חי ומיגל", type:"talk", topic:"זח״ש והמיקוביום בתוכו ובסביבתו" },
     { n:"סתיו לבנה לוזון", inst:"מכון ויצמן למדע", type:"talk" },
     { n:"ניצן בר שמואל", type:"panelLead", topic:"פאנל סביבה ופטריות, בהשתתפות קק״ל, רט״ג והמשרד להגנת הסביבה" },
     { n:"שילי דור-חיים", inst:"קק״ל", type:"panel" },
@@ -283,17 +283,17 @@ const SESSIONS = [
     { n:"שני גלייטמן", inst:"המארג", type:"panel" } ]},
   { id:"psilo", name:"פסילוסיבין", slot:"15:10–16:30", room:AUD, chairs:["ירון דקל","אייל קורצבאום"], items:[
     { n:"ירון דקל", inst:"מכון שמיר", type:"talk", topic:"אפיון גנומי ורגולטורי של גנים המעורבים בביוסינתזה של פסילוסיבין בפטריית Psilocybe cubensis" },
-    { n:"אייל קורצבאום", inst:"מכון שמיר", type:"talk", topic:"השונות המפתיעה בין גופי פרי של זנים שונים ב-Psilocybe cubensis" },
-    { n:"מיטל שבת סימון", inst:"תל-חי", type:"talk", topic:"טיפול בפסילוסיבין להפחתת מדדי לחץ במודל דגי זברה" },
+    { n:"אייל קורצבאום", inst:"מכון שמיר", type:"talk", topic:"השונות המפתיעה בין גופי פרי של זנים שונים ב-Psilocybe cubensis (פטריית קסם)" },
+    { n:"מיטל שבת סימון", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"פטריות ברפואה: טיפול בפסילוסיבין להפחתת מדדי לחץ במודל דגי זברה" },
     { n:"אור שחר", inst:"המרכז לחקר חומרים פסיכדליים, הדסה עין כרם", type:"talk", topic:"הפטרייה השלמה עושה יותר: תמצית טבעית מול פסילוסיבין סינתטי, ומשם לטיפול ב-OCD" },
-    { n:"רועי זרחיה", type:"talk20", tentative:true },
+    { n:"רואי זרחיה", type:"talk20", tentative:true },
     { n:"דדי מאירי", type:"talk20", tentative:true } ]},
   { id:"plant", name:"הגנת הצומח", slot:"15:10–16:30", room:SHAMIR, chairs:["ליאור גור","מרי דפני ילין"], items:[
-    { n:"מרי דפני ילין", inst:"תל-חי", type:"talk", topic:"מנגנון הגנה באבוקדו: הפחתת נזקי הפטרייה Botryosphaeria בעזרת מווסת הצמיחה GA3" },
+    { n:"מרי דפני ילין", inst:"מיגל, מו״פ צפון", type:"talk", topic:"מנגנון הגנה באבוקדו: הפחתת נזקי הפטרייה Botryosphaeria בעזרת מווסת הצמיחה GA3" },
     { n:"ליאור גור", inst:"מכון שמיר", type:"talk", topic:"משחקי מלחמה: אסטרטגיות התקפה ושרידות של פטריות פתוגניות ודרכי התגוננות" },
-    { n:"אופיר דגני", inst:"תל-חי", type:"talk", topic:"יישום ידידותי לסביבה של טריכודרמה ואזוקסיסטרובין בשחרור איטי מחרסית, נגד מחלות בגידולי שדה" },
+    { n:"אופיר דגני", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"יישום ידידותי לסביבה של טריכודרמה ואזוקסיסטרובין בשחרור איטי מחרסית, נגד מחלות בגידולי שדה" },
     { n:"דנה מנט", inst:"מכון וולקני", type:"talk", topic:"פטריות אנטומופתוגניות: אקולוגיה והדברה ביולוגית בחקלאות" },
-    { n:"עומר פרנקל", inst:"מכון וולקני", type:"talk20", topic:"אפיון אוכלוסיות פוזריום התוקפות גידולי כוסברה ושמיר בעונת הקיץ", tentative:true } ]}
+    { n:"עומר פרנקל", inst:"מכון וולקני", type:"talk20", topic:"אפיון אוכלוסיות פוזריום התוקפות גידולי כוסברה ושמיר בעונת הקיץ" } ]}
 ];
 
 const ROWS = [
@@ -321,11 +321,11 @@ const ALL = [...people.values()].map(p => ({ ...p, key:norm(p.n) }));
 
 /* What a person fills: talk form if they give any talk, name + affiliation if on a panel, nothing if they only chair */
 function formKind(p){
-  if (p.roles.some(r => r.kind === "talk" || r.kind === "talk20")) return "talk";
+  if (p.roles.some(r => r.kind === "talk" || r.kind === "talk20" || r.kind === "talk30")) return "talk";
   if (p.roles.some(r => r.kind === "panel" || r.kind === "panelLead")) return "panel";
   return "none";
 }
-const roleLabel = r => ({ talk:"הרצאה · 15 דקות", talk20:"הרצאה · 20 דקות", panel:"משתתף/ת בפאנל", panelLead:"מוביל/ת פאנל · 20 דקות", chair:"יו״ר המושב" })[r.kind];
+const roleLabel = r => ({ talk:"הרצאה · 15 דקות", talk20:"הרצאה · 20 דקות", talk30:"הרצאה · 30 דקות", panel:"משתתף/ת בפאנל", panelLead:"מוביל/ת פאנל · 20 דקות", chair:"יו״ר המושב" })[r.kind];
 
 /* ===== Schedule table ===== */
 function cell(id, me){
@@ -400,7 +400,7 @@ function drawLineup(s, p){
   document.getElementById("lineupCard").hidden = false;
   document.getElementById("lineupTitle").textContent = "המושב שלך: " + s.name;
   document.getElementById("lineupMeta").textContent = `${s.slot} · ${s.room} · יו״ר: ${s.chairs.join(" ו")}`;
-  const len = { talk:"15′", talk20:"20′", panelLead:"20′", panel:"" };
+  const len = { talk:"15′", talk20:"20′", talk30:"30′", panelLead:"20′", panel:"" };
   const items = s.items.filter(i => !i.hideInLineup && i.type !== "panel");
   document.getElementById("lineup").innerHTML = items.map(i => {
     const mine = i.n === p.n || i.with === p.n;
