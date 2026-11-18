@@ -167,7 +167,8 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
     <form id="f" novalidate>
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-      <!-- everyone -->
+      <!-- everyone: about you -->
+      <p class="sec" style="margin-top:0">עליך</p>
       <div class="row2">
         <label><span class="req">שם מלא (כפי שיופיע בתוכנייה)</span><input name="full_name" required></label>
         <label><span class="req">שיוך מקצועי / מוסד</span><input name="affiliation" required></label>
@@ -175,6 +176,12 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
       <div class="row2" data-for="talk chair panel">
         <label><span class="req">אימייל</span><input name="email" type="email" dir="ltr" data-req-for="talk chair panel"></label>
         <label>טלפון נייד<input name="phone" type="tel" dir="ltr"></label>
+      </div>
+      <label data-for="talk chair panel"><span class="req">רקע מקצועי</span><span class="hint">2–3 משפטים, עד 60 מילים. יו״ר המושב יקריא אותו כשיציג אותך.</span>
+        <textarea name="bio" data-maxwords="60" style="min-height:90px" data-req-for="talk chair panel"></textarea></label>
+      <div class="counter" id="bioCounter" data-for="talk chair panel"></div>
+      <div data-for="talk chair panel">
+        <label class="drop"><img alt="" hidden><span><b>תמונת פנים</b> <span class="hint">(לא חובה)</span><br><span class="hint">תמונה ברורה, רצוי ברקע נקי</span></span><input type="file" accept="image/*" data-file="headshot"></label>
       </div>
 
       <!-- talk -->
@@ -188,14 +195,6 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
         <button class="btn-line" type="button" id="addAuthor" style="margin-top:8px">+ הוספת שותף</button>
       </div>
 
-      <!-- professional background: talk + chair -->
-      <p class="sec" data-for="talk chair panel">כמה מילים עליך</p>
-      <label data-for="talk chair panel"><span class="req">רקע מקצועי</span><span class="hint">2–3 משפטים, עד 60 מילים. יו״ר המושב יקריא אותו כשיציג אותך.</span>
-        <textarea name="bio" data-maxwords="60" style="min-height:90px" data-req-for="talk chair panel"></textarea></label>
-      <div class="counter" id="bioCounter" data-for="talk chair panel"></div>
-      <div data-for="talk chair">
-        <label class="drop"><img alt="" hidden><span><b>תמונת פנים</b> <span class="hint">(לא חובה)</span><br><span class="hint">תמונה ברורה, רצוי ברקע נקי</span></span><input type="file" accept="image/*" data-file="headshot"></label>
-      </div>
 
       <label data-for="talk">צרכים טכניים להרצאה<input name="tech_needs" placeholder="סרטון עם קול, מחשב משלי, הרצאה מרחוק…"></label>
       <div data-for="talk">
