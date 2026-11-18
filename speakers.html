@@ -163,7 +163,7 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
 
   <section class="card" id="formCard" hidden>
     <h2 id="formTitle"></h2>
-    <p class="muted" style="margin-top:-6px">נשמח לקבל את הפרטים עד: <span class="tbd">יפורסם בהמשך</span></p>
+    <p class="muted" style="margin-top:-6px">נשמח לקבל את הפרטים עד 1 בדצמבר 2026</p>
     <form id="f" novalidate>
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -189,10 +189,10 @@ footer{margin-top:60px;padding:26px 0 40px;text-align:center;color:var(--muted);
       </div>
 
       <!-- professional background: talk + chair -->
-      <p class="sec" data-for="talk chair">עליך</p>
-      <label data-for="talk chair"><span class="req">רקע מקצועי</span><span class="hint">2–3 משפטים, עד 60 מילים. יו״ר המושב יקריא אותו כשיציג אותך.</span>
-        <textarea name="bio" data-maxwords="60" style="min-height:90px" data-req-for="talk chair"></textarea></label>
-      <div class="counter" id="bioCounter" data-for="talk chair"></div>
+      <p class="sec" data-for="talk chair panel">כמה מילים עליך</p>
+      <label data-for="talk chair panel"><span class="req">רקע מקצועי</span><span class="hint">2–3 משפטים, עד 60 מילים. יו״ר המושב יקריא אותו כשיציג אותך.</span>
+        <textarea name="bio" data-maxwords="60" style="min-height:90px" data-req-for="talk chair panel"></textarea></label>
+      <div class="counter" id="bioCounter" data-for="talk chair panel"></div>
       <div data-for="talk chair">
         <label class="drop"><img alt="" hidden><span><b>תמונת פנים</b> <span class="hint">(לא חובה)</span><br><span class="hint">תמונה ברורה, רצוי ברקע נקי</span></span><input type="file" accept="image/*" data-file="headshot"></label>
       </div>
@@ -417,7 +417,7 @@ const files = {};
 function setupForm(p, kind, it){
   document.getElementById("formCard").hidden = kind === "none";
   if (kind === "none") return;
-  document.getElementById("formTitle").textContent = kind === "talk" ? "פרטי ההרצאה שלך" : kind === "chair" ? "הפרטים שלך" : "השם והשיוך שלך לתוכנייה";
+  document.getElementById("formTitle").textContent = kind === "talk" ? "פרטי ההרצאה שלך" : kind === "chair" ? "הפרטים שלך" : "שם ושיוך";
   f.querySelectorAll("[data-for]").forEach(el => { el.hidden = !el.dataset.for.split(" ").includes(kind); });
   f.querySelectorAll("[data-req-for]").forEach(el => { el.required = el.dataset.reqFor.split(" ").includes(kind); });
   f.full_name.value = (it && it.title ? it.title + " " : "") + p.n;
