@@ -267,7 +267,7 @@ const SESSIONS = [
     { n:"עופרי לוי", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"פתוגנים אנושיים וצמחים: פענוח התגובה של פטריות פתוגניות לחומרי הגנה טבעיים" },
     { n:"פייגה מגזל", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"השפעת תסיסה של פטריות ריישי וקורדיספס על מיקרוביום האדם" },
     { n:"סולימן חטיב", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk" },
-    { n:"גאמאל מחגנה", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"פטריות רפואיות לטיפול בסרטן" },
+    { n:"ג׳מאל מחאג׳נה", inst:"אוניברסיטת קרית שמונה–תל חי", type:"talk", topic:"פטריות רפואיות לטיפול בסרטן" },
     { n:"דליה לוינסון", inst:"מכון שמיר", type:"talk", topic:"הרעלות מפטריות בישראל" },
     { n:"ניר אושרוב", inst:"אוניברסיטת תל אביב", type:"talk20", topic:"The surprising way in which Aspergillus fumigatus developed triazole antifungal resistance" } ]},
   { id:"ecology", name:"אקולוגיה", slot:"13:25–15:00", room:SHAMIR, chairs:["ניצן בר שמואל","עידן פרמן"], items:[
@@ -310,7 +310,7 @@ const ROWS = [
 ];
 
 /* ===== Build the people index ===== */
-const norm = s => s.replace(/ד["״']?ר|פרופ['׳]?/g, "").replace(/["״'׳\-–.,/\\]/g, " ").replace(/\s+/g, " ").trim();
+const norm = s => s.replace(/ד["״']?ר|פרופ['׳]?/g, "").replace(/["״'׳]/g, "").replace(/[\-–.,/\\]/g, " ").replace(/\s+/g, " ").trim();
 const people = new Map();
 function person(n){ if (!people.has(n)) people.set(n, { n, roles:[] }); return people.get(n); }
 SESSIONS.forEach(s => {
