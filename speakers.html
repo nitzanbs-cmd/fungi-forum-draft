@@ -296,10 +296,14 @@ const SESSIONS = [
     { n:"עומר פרנקל", inst:"מכון וולקני", type:"talk", topic:"אפיון אוכלוסיות פוזריום התוקפות גידולי כוסברה ושמיר בעונת הקיץ" } ]}
 ];
 
+const KEYNOTE = {
+  text:`הרצאת מליאה<br><bdi dir="ltr">“Lessons from Fungal Morphology for Development of Mycelium Materials”</bdi>`,
+  sub:`<bdi dir="ltr">Prof. Philippe Amstislavski, PhD · Professor of Public Health, University of Alaska Anchorage</bdi> · ${AUD}`
+};
 const ROWS = [
   { t:"09:15–09:45", text:"התכנסות ורישום", sub:AUD },
   { t:"09:45–10:15", text:"דברי פתיחה", sub:AUD },
-  { t:"10:15–10:55", text:"הרצאת מליאה", sub:AUD },
+  { t:"10:15–10:55", text:KEYNOTE.text, sub:KEYNOTE.sub },
   { t:"10:55–11:10", text:"הפסקה", brk:true },
   { t:"11:10–12:40", par:["food","citizen"] },
   { t:"12:40–13:25", text:"הפסקת צהריים ומושב פוסטרים", brk:true },
